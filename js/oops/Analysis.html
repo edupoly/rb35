@@ -1,0 +1,41 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+
+            
+            function Employee(fn,ln,d){
+                this.firsname=fn;
+                this.lastname=ln;
+                this.dob=d;
+                this.getAge = function(){
+                    var ct = new Date();
+                    var bt = new Date(this.dob)
+                    var age = ct.getTime()-bt.getTime();
+                    console.log(age/(1000*60*60*24*365))
+                }
+            }
+            Employee();
+
+            var e1 = new Employee("venky",'danne','08-06-1998');
+            var e2 = new Employee("mohan",'krishna','08-10-1994');
+            var e3 = new Employee("sukumar",'singh','12-5-1991');
+            var e4 = new Employee("amitab",'bachan','11-12-1940');
+            e1.getAge();
+            e2.getAge()
+
+
+        </script>
+    </body>
+</html>
+<!-- 
+    calling a function with new keyword makes this pointer to point {} empty object
+    called function automatically return this
+ -->
+ <!-- 
+    object oriented principles
+        1. encapsulation
+            wrappingup of data and methods together is encapsulation
+
+    this hold the current object
+  -->

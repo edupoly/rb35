@@ -1,0 +1,27 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            // console.log("first line")
+            // setTimeout(function(){
+            //     console.log("Inside set time out of 3000")
+            // },3000)
+            // console.log("second line")
+            // setTimeout(function(){
+            //     console.log("Inside set time out of 1000")
+            // },1000)
+            // console.log("third line")
+
+            var i = 0;
+            var str = "Edupoly";
+            var x = setInterval(function(){
+                document.write(str[i])
+                i++;
+                if(i>=str.length){
+                    clearInterval(x)
+                }
+            },1000)
+
+        </script>
+    </body>
+</html>

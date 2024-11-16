@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <style>
+            
+        </style>
+    </head>
+    <body>
+        <form onsubmit="saveData(event)">
+            <input type="text" name="posttitle">
+            <br>
+            <textarea id="" cols="30" rows="10" name="content"></textarea>
+            <br>
+            <button>Save</button>
+        </form>
+        <script>
+            function saveData(e){
+                e.preventDefault();
+                var newpost={};
+                var newpost = new FormData(e.target)
+                for(var k of newpost.entries()){
+                    newpost[k[0]]=k[1];
+                }
+                fetch("http://localhost:4000/posts",{
+                    method:'POST',
+                    body:{...newpost}
+                })
+                .then(function(data){alert(JSON.stringify(data))})
+                .catch(function(err){console.log(err)})
+            }
+            
+
+           
+        </script>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function abc(){
+                var i = 1;
+                return function(){
+                    i++;
+                    console.log("Hello",i)
+                }   
+            }
+            var x = abc;
+            var y = x();
+            y();
+            y();
+            y();
+            y();
+        </script>
+    </body>
+</html>

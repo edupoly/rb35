@@ -1,0 +1,46 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var ob1 = {
+                firstname:'praveen',
+                lastname:'gubbala',
+                gender:'male'
+            }
+            function abc(){
+                console.log("Hello",this,arguments)
+            }
+
+
+            abc.call(ob1,10,20,40)
+            abc.apply(ob1,[10,39,45])
+
+            // var ob1 = {
+            //     firstname:'praveen',
+            //     lastname:'gubbala',
+            //     gender:'male'
+            // }
+            // var ob2 = {
+            //     firstname:'mokshaja',
+            //     lastname:'gubbala',
+            //     gender:'female'
+            // }
+            
+            // function fullName(){
+            //     this.fullName=this.gender==='male'?`Mr.${this.firstname} ${this.lastname}`:`Miss.${this.firstname} ${this.lastname}`;
+            //     return this
+            // }
+            // fullName.bind(ob1)()
+            // fullName.bind(ob2)()
+
+            
+        </script>
+    </body>
+</html>
+<!-- 
+    bind method will be applied on function definition
+    after bind method it will return a new function
+
+    call function will be applied on a function with this pointing to passed object
+    apply is just same as call but we can pass array as argument
+ -->

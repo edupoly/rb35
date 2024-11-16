@@ -1,0 +1,32 @@
+<html>
+    <head></head>
+    <body>
+        <button onclick="adb(event)">Lets See</button>
+        <input type="text" onfocus="xyz(event)" onblur="pqr(event)">
+        <script>
+            function xyz(e){
+                e.target.style.outline="0px"
+                e.target.style.border="0px solid"
+                e.target.style.borderBottom="2px solid";
+            }
+            function adb(e){
+                console.log("Hello events",e)
+            }
+            function pqr(e){
+                e.target.style.outline="2px";
+                e.target.style.border="1px solid";
+            }
+        </script>
+    </body>
+</html>
+<!--
+event handling
+    event listener
+        onclick
+        onchange
+        onkeyup
+        onfocus
+    event handler
+    event binding
+    event object
+ -->

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Rohit</h1>
+    <h1 class="inc">Praveen</h1>
+    <h1>Gambir</h1>
+    <h2>Cathy</h2>
+    <h2>Sameera</h2>
+    <h1 class="inc">Sachin</h1>
+    <h2>Sania</h2>
+    <script>
+        var x = document.getElementsByTagName("h1");
+        // for(var i=0;i<=x.length-1;i++){
+        //     x[i].style.color='red'
+        // }
+        // x.forEach(function(el){
+        //     el.style.color='blue'
+        // })
+        var y = document.querySelector("h1:nth-child(3)");
+        // y.forEach(function(el){
+        //     el.style.color="green"
+        // })
+        console.log(y)
+    </script>
+</body>
+</html>

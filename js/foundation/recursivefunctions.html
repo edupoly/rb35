@@ -1,0 +1,39 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+
+            function facto(n){
+                if(n==1){
+                    return 1
+                }
+                else{
+                    return n*facto(n-1)
+                }
+            }
+            var res = facto(5);
+            console.log(res)
+
+            //5*facto(4)
+            //5*4*facto(3)
+            //20*3*facto(2)
+            //60*2*facto(1)
+            //120*1*facto(0)
+            //120*0*facto(-1)
+
+
+
+
+            // var f=1;
+            // var i=5;
+            // while(i>=1){
+            //     f=f*i;
+            //     i--;
+            // }
+            // console.log(f)
+        </script>
+    </body>
+</html>
+<!-- 
+    5!=5*4*3*2*1
+ -->

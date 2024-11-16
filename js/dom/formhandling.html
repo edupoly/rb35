@@ -1,0 +1,51 @@
+<html>
+    <head></head>
+    <body>
+        <form onsubmit="xyz(event)" name="myform">
+            <input type="text" id="fn" name="firstname">
+            <br>
+            <input type="text">
+            <br>
+            <input type="radio" name="gender" value="m">:male
+            <input type="radio" name="gender" value="f">:female
+            <input type="radio" name="gender" value="o">:others
+            <br>
+            <input type="checkbox" name="technology" value="nodejs">:NodeJS
+            <input type="checkbox" name="technology" value="angular">:Angular
+            <input type="checkbox" name="technology" value="rjs">:ReactJS
+            <input type="checkbox" name="technology" value="ejs">:ExpressJS
+            <input type="checkbox" name="technology" value="mdb">:MongoDB
+            <button onclick="abc()">Save</button>
+        </form>
+        <script>
+            function xyz(e){
+                e.preventDefault();
+                var formDetails = new FormData(e.target)
+                console.log(formDetails.getAll("technology"))
+                // for(var v of formDetails.entries()){
+                //     console.log(v)
+                // }
+            }
+            function abc(){
+                console.log("Hello Form Handling.........")
+                // console.log(document.getElementById("fn").value)
+                // console.log(document.myform.firstname.value)
+                // console.log(myform.firstname.value)
+                // console.log(document.getElementsByName('firstname'))
+                // document.getElementsByName("gender").forEach(function(el){
+                //     if(el.checked===true){
+                //         console.log(el.value)
+                //     }
+                // })
+                // document.getElementsByName("technology").forEach(function(el){
+                //     if(el.checked){
+                //         console.log(el.value)
+                //     }
+                // })
+            }
+        </script>
+    </body>
+</html>
+<!-- 
+
+ -->

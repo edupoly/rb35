@@ -1,0 +1,24 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            function Movie(mname,hero,director,heroine){
+                this.movieTitle=mname;
+                this.hero=hero;
+                this.director=director;
+                this.heroine=heroine;
+                return this;
+            }
+            var nmovie = new Movie("Pushpa2",'AlluArjun','Sukumar',"Rashmika");
+            console.log(nmovie)
+
+            function Theatre(tname,tlocation,tcity){
+                this.theatreName = tname;
+                this.theatreLocation = tlocation;
+                this.theatreCity = tcity;
+            }
+            var ntheatre = new Theatre("Vishwanath","KPHB","Hyderabad");
+            var ntheatre2 = new Theatre("Arjun","KPHB","Hyderabad");
+        </script>
+    </body>
+</html>

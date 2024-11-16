@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+       
+    </head>
+    <body>
+        <b>Edupoly Training on ReactJS... Contact for Training</b>
+        <h1>
+            Print only the numbers of array less than 25 of numbers in list items
+        </h1>
+        <div id="root"></div>
+
+        <script type="text/babel">
+            var x = [10,24,59,17,52,58,19,44,18,23]
+            var js1 = <div>
+                        <ul>
+                            {
+                                x.filter((v)=>{
+                                    if(v<25){
+                                        return true
+                                    }
+                                    else{
+                                        return false
+                                    }
+                                }).map((v)=>{
+                                    return <li>{v}</li>
+                                })
+                            }
+                        </ul>
+                       
+            </div>
+            ReactDOM.render(js1,document.getElementById("root"))
+           
+        </script>
+    </body>
+</html>
+<!--  -->

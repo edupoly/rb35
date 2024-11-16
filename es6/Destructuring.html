@@ -1,0 +1,47 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            // var a=100,b=200,c=400,d=555;
+            var a = 100;
+            var b = 200;
+            [a,b]=[b,a]
+            console.log(a)
+            console.log(b)
+
+            var ob1 = {
+                firstname:'praveen',
+                lastname:'gubbala',
+                address:{
+                    pincode:4984
+                }
+            }
+
+            var {firstname,address:{pincode}} = ob1;
+            console.log(firstname)
+            console.log(pincode)
+
+            //...
+            // var ar = [10,20,40];
+            // var br = [11,22,33];
+            // var cr = ar.concat(br);
+            // var dr = [...ar,...br]
+            // console.log(cr)
+            // console.log(dr)
+
+            var xr = [11,22,33];
+            Object.freeze(xr);
+            xr = [...xr,'praveen']
+            console.log(xr)
+
+            var person={
+                firstname:'venky',
+                lastname:'danne'
+            }
+            
+            var place="KPHB";
+            person = {...person,place}
+            console.log(person)
+        </script>
+    </body>
+</html>

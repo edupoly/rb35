@@ -1,0 +1,29 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var mydetails = {
+                firstname:'praveen',
+                lastname:"gubbala",
+                age:41,
+                place:'hyd',
+                gender:'male'
+            }
+            console.log(mydetails.firstname);
+            var c = "age";
+            console.log(mydetails.c)
+            console.log(mydetails[c])
+            for(var k in mydetails)
+            {
+                console.log("hihih",k,mydetails[k])
+            }
+            var ar = [10,47,84,59];
+            for(var j of ar){
+                console.log(j)
+            }
+            for(var h in ar){
+                console.log(h)
+            }
+        </script>
+    </body>
+</html>

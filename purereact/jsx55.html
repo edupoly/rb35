@@ -1,0 +1,76 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+       
+    </head>
+    <body>
+        <b>Edupoly Training on ReactJS... Contact for Training</b>
+        <h1>
+            Generate Table rows for Dynamically Added Student
+        </h1>
+        <form onsubmit="addStudent(event)">
+            <input type="text" placeholder="Enter Firstname" name="firstname"><br>
+            <input type="text" placeholder="Enter Lastname" name="lastname"><br>
+            <input type="text" placeholder="Enter Age" name="age"><br>
+            <button>Add Student</button>
+        </form>
+        
+        <div id="root"></div>
+
+        <script type="text/babel">
+          var students = [
+                            {
+                            firstname:"Praveen",
+                            lastname:"Gubbala",
+                            age:40
+                            },
+                            {
+                            firstname:"Rohit",
+                            lastname:"Sharma",
+                            age:35
+                            },
+                            {
+                            firstname:"Sachin",
+                            lastname:"Tendulkar",
+                            age:50
+                            },
+                        ]
+            function genTable(){
+                var js1 = <table border="2">
+                        <thead>
+                            <tr>
+                                <th>Firstname</th>
+                                <th>Lastname</th>
+                                <th>Age</th>
+                            </tr>
+                        </thead>
+                        {
+                            students.map((s)=>{
+                                return  <tr>
+                                            <td>{s.firstname}</td>
+                                            <td>{s.lastname}</td>
+                                            <td>{s.age}</td>
+                                        </tr>
+                            })
+                        }
+                    </table>
+                ReactDOM.render(js1,document.getElementById("root"))
+            }
+            function addStudent(ev){
+                ev.preventDefault();
+                var studentForm = new FormData(ev.target);
+                var newstudent={}
+                for(var k of studentForm.entries()){
+                    newstudent[k[0]]=k[1]
+                }
+                students.push(newstudent);
+                genTable();
+                
+            }
+            genTable();
+        </script>
+    </body>
+</html>
+<!--  -->

@@ -1,0 +1,30 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            class Person{
+                firstname;
+                lastname;
+                dob;
+                constructor(fn,ln,d){
+                    this.firstname=fn;
+                    this.lastname=ln;
+                    this.dob=d;
+                }
+                getAge(){
+                    var ct = new Date();
+                    var bt = new Date(this.dob)
+                    var age = ct.getTime()-bt.getTime();
+                    console.log(age/(1000*60*60*24*365))
+                }
+            }
+            var ob1 = new Person("praveen",'gubbala','04/19/1983');
+            var ob2 = new Person("rahul",'reddy','10/2/1999');
+            console.log(ob1)
+            console.log(ob2)
+
+            ob1.getAge();
+            ob2.getAge();
+        </script>
+    </body>
+</html>

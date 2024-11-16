@@ -1,0 +1,36 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var ob1 = {
+                company:'micron',
+                salary:232323,
+                place:'gachibowli',
+                contacts:{
+                    mobile:121212,
+                    email:'prav@gmail.com'
+                }
+            }
+            var ob2 = ob1
+            var ob3 = {...ob1}
+            var ob4 = JSON.parse(JSON.stringify(ob1))
+            ob1.salary=9999999;
+            ob1.contacts.mobile=88888;
+            console.log(ob2)
+            console.log(ob3)
+            console.log(ob4)
+        </script>
+    </body>
+</html>
+<!-- 
+    clone
+    duplicate
+    another instance
+    copy
+
+    reference
+    alias
+
+    deepcopy
+    shallowcopy
+ -->

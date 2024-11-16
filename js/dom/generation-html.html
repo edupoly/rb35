@@ -1,0 +1,30 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Edupoly</h1>
+
+        <div id="d1"></div>
+        <button onclick="abc()">CLICK ME</button>
+        <ul id="ct"></ul>
+        <script>
+            function abc(a,i){
+                alert(i)
+            }
+            var ar = ['india','srilanka','indonasia','japan'];
+            ar.forEach(function(a,i){
+                var nli = document.createElement("li");
+                nli.innerHTML = a;
+                
+                var btn = document.createElement("button");
+                btn.innerHTML = "Hello";
+                btn.onclick=function(){abc(a,i)}
+
+                nli.appendChild(btn)
+                document.getElementById("ct").appendChild(nli)
+            })
+            var nh1 = document.createElement("h1");
+            nh1.innerHTML = "Praveen"
+            document.getElementById('d1').appendChild(nh1)
+        </script>
+    </body>
+</html>

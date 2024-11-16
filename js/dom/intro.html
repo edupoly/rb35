@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <h1 id="d1"></h1>
+    <script>
+        setInterval(function(){
+            var d1 = new Date();
+            var hrs = d1.getHours();
+            var min = d1.getMinutes()
+            var sec = d1.getSeconds();
+            var ms = d1.getMilliseconds()
+            document.getElementById("d1").innerHTML=hrs+":"+min+":"+sec+":"+ms;
+        },100)
+    </script>
+</body>
+</html>
+
+<!-- 
+    javascript is object based language
+        built-in objects
+            window
+            document
+
+            instance based
+                new Date
+                new XMLHttpRequest
+ -->
+ <!-- 
+    1. to access(selection) html and css in js
+    2. to modify html and css in js
+    3. to generate html and css from js
+  -->

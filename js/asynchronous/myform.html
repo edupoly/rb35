@@ -1,0 +1,84 @@
+<html>
+    <head></head>
+    <body>
+        <form onsubmit="addStudent(event)">
+            <input type="text" name="firstname">
+            <br>
+            <input type="text" name="lastname">
+            <br>
+            <button>Add Student</button>
+        </form>
+        <table border="2">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                </tr>
+            </thead>
+            <tbody id="d1">
+
+            </tbody>
+        </table>
+        <script>
+
+            window.onload = function(){
+                getAllStudnets();
+            }
+            async function getAllStudnets(){
+                var resp = await fetch("http://localhost:4000/students")
+                var data = await resp.json();
+                genStudentsTable(data)
+            }
+            function genStudentsTable(data){
+                document.getElementById("d1").innerHTML=''
+                data.forEach(function(student){
+                    var ntr = document.createElement("tr")
+                    var fntd = document.createElement("td")
+                    fntd.innerHTML=student.firstname;
+                    var lntd = document.createElement("td")
+                    lntd.innerHTML=student.lastname;
+                    var delBtn = document.createElement("button")
+                    delBtn.innerHTML='delete';
+                    delBtn.onclick=function(){
+                        deleteStudentRequest(student.id)
+                    }
+                    ntr.appendChild(fntd)
+                    ntr.appendChild(lntd)
+                    ntr.appendChild(delBtn)
+                    document.getElementById("d1").appendChild(ntr)
+                })
+            }
+            async function addStudentRequest(sd){
+                var resp = await fetch("http://localhost:4000/students",{
+                                    method:'POST',
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                    },
+                                    body:JSON.stringify(sd)
+                                })
+                var data = await resp.json();
+                getAllStudnets()
+            }
+            async function deleteStudentRequest(id){
+                var resp = await fetch("http://localhost:4000/students/"+id,{
+                                    method:'DELETE',
+                                    headers: {
+                                        "Content-Type": "application/json",
+                                    }
+                                })
+                var data = await resp.json();
+                getAllStudnets()
+            }
+            function addStudent(e){
+                e.preventDefault();
+                var studentDetails={};
+                var details = new FormData(e.target)
+                for(var k of details.entries()){
+                    studentDetails[k[0]]=k[1]
+                }
+                console.log(studentDetails)
+                addStudentRequest(studentDetails)
+            }
+        </script>
+    </body>
+</html>

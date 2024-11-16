@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+       
+    </head>
+    <body>
+        <b>Edupoly Training on ReactJS... Contact for Training</b>
+        <h1>
+            Print each object in a seperate list for a given array of student objects
+        </h1>
+        <div id="root"></div>
+
+        <script type="text/babel">
+          var students = [
+                            {
+                            firstname:"Praveen",
+                            lastname:"Gubbala",
+                            age:40
+                            },
+                            {
+                            firstname:"Rohit",
+                            lastname:"Sharma",
+                            age:35
+                            },
+                            {
+                            firstname:"Sachin",
+                            lastname:"Tendulkar",
+                            age:50
+                            },
+                        ]
+            var js1 = <div>
+                        {
+                            students.map((s)=>{
+                                return  <ul>
+                                            <li>{s.firstname}</li>
+                                            <li>{s.lastname}</li>
+                                            <li>{s.age}</li>
+                                        </ul>
+                            })
+                        }
+                    </div>
+            ReactDOM.render(js1,document.getElementById("root"))
+           
+        </script>
+    </body>
+</html>
+<!--  -->

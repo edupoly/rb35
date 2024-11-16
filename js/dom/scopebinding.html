@@ -1,0 +1,35 @@
+<html>
+    <head></head>
+    <body>
+        <input type="text" id="d2">
+        <button onclick="addplayer()">Add Todo</button>
+        <ul id="team">
+
+        </ul>
+        <script>
+            
+            var players = ["rohit","virat","surya","pandya","kishan","Gill","jaiswal","abhishek","shashak"];
+            genList();
+            function addplayer(){
+                var newplayer = document.getElementById("d2").value;
+                players.push(newplayer)
+                genList();
+            }
+            function genList(){
+                document.getElementById("team").innerHTML="";
+                players.forEach(function(p,i){
+                    var li = document.createElement("li");
+                    li.innerHTML=p;
+                    var delBtn = document.createElement("button");
+                    delBtn.innerHTML='DEL';
+                    delBtn.onclick=function(){
+                        players.splice(i,1)
+                        genList();
+                    }
+                    li.appendChild(delBtn)
+                    document.getElementById("team").appendChild(li)
+                })
+            }
+        </script>
+    </body>
+</html>

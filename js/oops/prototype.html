@@ -1,0 +1,30 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+           
+            function Employee(fn,ln,a){
+                this.firstname=fn;
+                this.lastname=ln;
+                this.age=a;
+
+            }
+            Employee.prototype.company="Edupoly";
+            Employee.prototype.getAge=function(){
+                
+            }
+            var e1 = new Employee("nani",'fas',33)
+            var e2 = new Employee("balu",'sds',23)
+            console.log(e1.company)
+            console.log(e2.company)
+            console.dir(e1)
+            console.dir(e2)
+            Employee.prototype.company="Edupoly Solutions Pvt Ltd"
+            console.log(e1.company)
+            console.log(e2.company)
+            e1.__proto__.company="Edupoly Corp";
+            console.log(e1)
+            console.log(e2)
+        </script>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var ob1 = {
+                city:'hyderabad',
+                place:'gachibowli',
+                school:'edo okati'
+            }
+            var ob2 = {
+                firstname:'mokshaja',
+                lastname:'gubbala',
+                gender:'female'
+            }
+            ob2.__proto__=ob1;
+            console.log(ob2.place)
+            console.log(ob1.place)
+            console.log(ob1.gender)
+
+            var ar = [12,42];
+            Array.prototype.max=function(){
+                console.log("Edo urike")
+            }
+
+        </script>
+    </body>
+</html>

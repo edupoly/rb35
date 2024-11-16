@@ -1,0 +1,24 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Counter:<span id="d1"></span></h1>
+        <button onclick="inc()">Inc</button>
+        <button onclick="dec()">Dec</button>
+        <script>
+            var temp =  +window.sessionStorage.getItem("count");
+            var c = temp?temp:0
+            document.getElementById("d1").innerHTML=c;
+            function inc(){
+                c=c+1;
+                window.sessionStorage.setItem('count',c)
+                document.getElementById("d1").innerHTML=c;
+            }
+            
+            function dec(){
+                c=c-1;
+                window.sessionStorage.setItem('count',c)
+                document.getElementById("d1").innerHTML=c;
+            }
+        </script>
+    </body>
+</html>

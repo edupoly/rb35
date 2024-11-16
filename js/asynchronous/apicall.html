@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <style>
+            #labs{
+                display: flex;
+                flex-wrap: wrap;
+                list-style: none;
+                justify-content: space-evenly;
+            }
+            #labs li{
+                width:200px;
+                border:1px solid;
+                margin: 10px;
+                padding:10px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="labs">
+
+        </ul>
+        <script>
+            
+            fetch("http://localhost:4000/posts")
+            .then(function(res){
+                res.json().then(function(data){
+                    console.log(data)
+                })
+            })
+
+            fetch("http://universities.hipolabs.com/search?country=United+States")
+            .then(function(res){
+                res.json().then(function(data){
+                    data.forEach(function(item){
+                        var nli = document.createElement("li");
+                        var ch1 = document.createElement("h3");
+                        ch1.innerHTML=item.name;
+                        var cws = document.createElement("a");
+                        cws.href = item['web_pages'][0];
+                        cws.innerHTML=item['web_pages'][0];
+                        nli.appendChild(ch1);
+                        nli.appendChild(cws)
+                        document.getElementById("labs").appendChild(nli)
+                    })
+                })
+            })
+        </script>
+    </body>
+</html>

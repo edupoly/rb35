@@ -1,0 +1,49 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+            var firstname='ramu';
+            var lastname='haia';
+            function Employee(fn,ln,m){
+                this.firstname=fn;
+                this.lastname=ln;
+                this.marks=m;
+                this.getFullName=function(){
+                    setTimeout(()=>{
+                        console.log(this.firstname+this.lastname)
+                    },3000)
+                }
+                this.totalMarks=function(){
+                    return this.marks.reduce(function(a,b){return a+b},0)
+                }
+            }
+            var e1 = new Employee('mohan','krishna',[89,98,99,79])
+            e1.getFullName();
+            console.log(e1.totalMarks())
+
+            // function add(a,b){
+            //     return a+b;
+            // }
+            // var sub = function(a,b){
+            //     return a-b;
+            // }//function exp//function literal
+
+            // var mul = (a,b)=>{
+            //     return a*b
+            // }//arrow function
+
+            // // var mul = (a,b)=>a*b
+            
+
+            // var res = mul(10,20)
+            // console.log(res)
+
+            // var inc = a=>++a;
+            
+            // var ar = [10,13,20,38,57];
+
+            // var br = ar.filter(a=>!(a%2))
+            // console.log(br)
+        </script>
+    </body>
+</html>

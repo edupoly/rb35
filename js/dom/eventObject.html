@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <style>
+            p{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 onclick="makeitred(event)">Praveen</h1>
+        <p>The animation effect of this component is depende</p>
+        <h1 onclick="makeitred(event)">Bhanu</h1>
+        <p>move the default background-color, some borders, and some rounded corners to render accordions edge-to-edge with their parent container.</p>
+        <h1 onclick="makeitred(event)">Venky</h1>
+        <p>Bootstrap
+            Designed and built with all the love in the world by the Bootstrap team with the help of our contributors.</p>
+        <h1 onclick="makeitred(event)">Mohan</h1>
+        <p>default variables. It's also worth noting that just about any HTML can go within the .accordion-body, though the transition does limit overflow.
+        </p>
+        <h1 onclick="makeitred(event)">Mahesh</h1>
+        <p>the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just abou</p>
+        <script>
+            function makeitred(e){
+                document.querySelectorAll("p").forEach((para)=>{
+                    para.style.display='none';
+                })
+                e.target.nextElementSibling.style.display='block'
+                document.querySelectorAll("h1").forEach((el)=>{
+                    el.style.color='black'
+                })
+                e.target.style.color='red'
+            }
+        </script>
+    </body>
+</html>

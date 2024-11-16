@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style>
+            #prods{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            }
+            #prods li{
+                display: flex;
+                flex-wrap: wrap;
+                width:200px;
+                border: 1px solid gainsboro;
+                padding:20px;
+                margin: 10px;
+                justify-content: center;
+            }
+            #prods li img{
+                width:200px;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="prods"></ul>
+        <script>
+            //promises
+            fetch("https://fakestoreapi.in/api/products")
+            .then(function(res){
+                res.json().then(function(data){
+                    data.products.forEach(function(product){
+                        var nli = document.createElement("li");
+                        nli.innerHTML=product.title;
+                        var pimg = document.createElement("img");
+                        pimg.src=product.image;
+                        nli.appendChild(pimg)
+                        var ph1 = document.createElement("h1")
+                        ph1.innerHTML="Rs."+product.price;
+                        nli.appendChild(ph1)
+                        document.getElementById("prods").appendChild(nli)
+                    })
+                })
+            })
+            .catch(function(){
+                console.log("sar sarle enno anukuntam")
+            })
+           
+            console.log("Last line")
+        </script>
+    </body>
+</html>

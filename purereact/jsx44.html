@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+       
+    </head>
+    <body>
+        <b>Edupoly Training on ReactJS... Contact for Training</b>
+        <h1>
+            Print the images as table cells from array of image urlsaa
+        </h1>
+        <div id="root"></div>
+
+        <script type="text/babel">
+            var x = [
+                  "https://cdn.pixabay.com/photo/2023/04/08/01/23/mom-7908059_1280.jpg",
+                  "https://cdn.pixabay.com/photo/2015/01/07/11/31/tigers-591359_1280.jpg",
+                  "https://cdn.pixabay.com/photo/2015/04/23/22/01/mountains-736886_1280.jpg"
+                ]
+            var js1 = <table border="2">
+                        <tr>
+                            {
+                                x.map((imgUrl)=>{
+                                    return <td><img src={imgUrl} style={{width:"200px"}}/></td>
+                                })
+                            }
+                        </tr>
+                       
+            </table>
+            ReactDOM.render(js1,document.getElementById("root"))
+           
+        </script>
+    </body>
+</html>
+<!--  -->

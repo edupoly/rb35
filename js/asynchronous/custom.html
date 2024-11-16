@@ -1,0 +1,56 @@
+<html>
+    <head></head>
+    <body>
+        <script>
+
+            function getAllProducts(){
+                var p = new Promise(function(resolve,reject){
+                    fetch("https://fakestoreapi.in/api/products")
+                    .then(function(res){
+                        res.json().then(function(data){
+                            resolve(data)
+                        })
+                    })
+                    .catch(function(err){
+                        reject("Some errrorrr!!")
+                    })
+                })
+                return p;
+            }
+            // async function getAllProducts(){
+            //     var x = await fetch("https://fakestoreapi.in/api/products")
+            //     return x.json();
+            // }
+            getAllProducts()
+            .then(function(data){console.log(data)})
+            .catch(function(err){console.log(err)})
+           
+
+            // function add(a,b){
+            //     if(isNaN(a) || isNaN(b)){
+            //         return Promise.reject('Chuskobadla')
+            //     }
+            //     else{
+            //         return Promise.resolve(a+b);
+            //     }
+            // }
+
+            // add(10,'sd0').then(function(res){
+            //     console.log(res)
+            // }).catch(function(err){
+            //     console.log(err)
+            // })
+
+        </script>
+    </body>
+</html>
+<!-- 
+    Promise is an Object
+        resolve 
+        reject
+
+    promise instance object
+        status:fulfilled/pending/rejected
+        then
+        catch
+ -->
